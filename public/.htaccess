@@ -1,0 +1,9 @@
+# Only use .htaccess file when you don't have access to the main server configuration file
+
+RewriteEngine On
+
+# Handle request filename is valid directory and file name
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^ /index.php [L]
